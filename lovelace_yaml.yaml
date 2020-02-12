@@ -1,0 +1,2314 @@
+  - badges: []
+    cards:
+      - default: TERMOSTATO
+        entity: input_select.visualizzazione
+        states:
+          ECO:
+            elements:
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Impostazioni eco
+                style:
+                  background-color: 'rgba(34, 154, 210, 0.5)'
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  right: 10%
+                  text-align: center
+                  top: 10%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-left-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: TERMOSTATO
+                type: icon
+              - entity: input_boolean.eco_orario
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 70%
+                  top: 25%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.eco_orario
+                type: state-label
+              - entity: input_select.modalita_trk
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 70%
+                  top: 40%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_next
+                  service_data:
+                    entity_id: input_select.modalita_trk
+                type: state-label
+              - entity: input_datetime.orario_accensione_eco_term
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 70%
+                  top: 55%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_eco_term
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 70%
+                  top: 70%
+                type: state-label
+              - entity: input_number.temperatura_eco
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 70%
+                  top: 85%
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Modalità ECO orario
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  text-align: left
+                  top: 25%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Modalità in uscita
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  text-align: left
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Orario accensione
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  text-align: left
+                  top: 55%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Orario spegnimento
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  pointer-events: auto
+                  text-align: left
+                  top: 70%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Temperatura
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  pointer-events: auto
+                  text-align: left
+                  top: 85%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_number.temperatura_eco
+                hold_action:
+                  action: call-service
+                  service: input_number.increment
+                  service_data:
+                    entity_id: input_number.temperatura_eco
+                icon: 'mdi:arrow-up-bold-outline'
+                style:
+                  color: white
+                  left: 60%
+                  top: 85%
+                tap_action:
+                  action: call-service
+                  service: input_number.increment
+                  service_data:
+                    entity_id: input_number.temperatura_eco
+                type: icon
+              - entity: input_number.temperatura_eco
+                hold_action:
+                  action: call-service
+                  service: input_number.decrement
+                  service_data:
+                    entity_id: input_number.temperatura_eco
+                icon: 'mdi:arrow-down-bold-outline'
+                style:
+                  color: white
+                  left: 80%
+                  top: 85%
+                tap_action:
+                  action: call-service
+                  service: input_number.decrement
+                  service_data:
+                    entity_id: input_number.temperatura_eco
+                type: icon
+            image: /local/immagini/lovelace/blu.jpg
+            type: picture-elements
+          ORARIO:
+            elements:
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Orario termostato
+                style:
+                  background-color: 'rgba(34, 154, 210, 0.5)'
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  opacity: 0.8
+                  pointer-events: auto
+                  right: 10%
+                  text-align: center
+                  top: 10%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-left-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: TERMOSTATO
+                type: icon
+              - entity: input_datetime.orario_accensione_term
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 60%
+                type: state-label
+              - entity: input_datetime.orario_accensione_term2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 60%
+                type: state-label
+              - entity: input_datetime.orario_accensione_term3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 60%
+                type: state-label
+              - entity: input_boolean.accensione2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 30%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.accensione2
+                type: state-label
+              - entity: input_boolean.accensione3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 30%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.accensione3
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 1
+                style:
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 13%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 2
+                style:
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 43%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 3
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 72%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+            image: /local/immagini/lovelace/blu.jpg
+            type: picture-elements
+          TERMOSTATO:
+            elements:
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Termostato
+                style:
+                  background-color: 'rgba(34, 154, 210, 0.5)'
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  opacity: 0.8
+                  pointer-events: auto
+                  right: 10%
+                  text-align: center
+                  top: 10%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_select.visualizzazione
+                icon: 'mdi:calendar-today'
+                style:
+                  color: green
+                  left: 95%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: ORARIO
+                type: icon
+              - entity: input_select.visualizzazione
+                icon: 'mdi:leaf'
+                style:
+                  color: green
+                  left: 5%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: ECO
+                type: icon
+              - entity: input_number.temperatura_termostato
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 70%
+                  top: 50%
+                type: state-label
+              - entity: sensor.temperatura_attuale
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 50%
+                type: state-label
+              - color: grey
+                entity: input_select.modalita_termostato
+                icon: 'mdi:flash-off'
+                name: 'OFF'
+                style: |
+                  ha-card {
+                    background: {% if is_state("input_select.modalita_termostato", "OFF") %}  yellow;
+                    {% endif %}
+                    color: {% if is_state("input_select.modalita_termostato", "OFF") %} red;
+                    {% endif %}
+                  }
+                styles:
+                  card:
+                    - height: 45px
+                    - width: 45px
+                    - left: 230px
+                    - top: '-25px'
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.modalita_termostato
+                    option: 'OFF'
+                type: 'custom:button-card'
+              - color: red
+                entity: input_select.modalita_termostato
+                icon: 'mdi:fire'
+                name: MAN
+                style: |
+                  ha-card {
+                    background: {% if is_state("input_select.modalita_termostato", "MANUALE") %}  yellow;
+                    {% endif %}
+                    color: {% if is_state("input_select.modalita_termostato", "MANUALE") %} red;
+                    {% endif %}
+                  }
+                styles:
+                  card:
+                    - height: 45px
+                    - width: 45px
+                    - left: 180px
+                    - top: '-25px'
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.modalita_termostato
+                    option: MANUALE
+                type: 'custom:button-card'
+              - color: blue
+                entity: input_select.modalita_termostato
+                icon: 'mdi:home-automation'
+                name: AUTO
+                style: |
+                  ha-card {
+                    background: {% if is_state("input_select.modalita_termostato", "AUTO") %}  yellow;
+                    {% endif %}
+                    color: {% if is_state("input_select.modalita_termostato", "AUTO") %} red;
+                    {% endif %}
+                  }
+                styles:
+                  card:
+                    - height: 45px
+                    - width: 45px
+                    - left: 130px
+                    - top: '-25px'
+                tap_action:
+                  action: call-service
+                  service: script.turn_on
+                  service_data:
+                    entity_id: script.auto
+                type: 'custom:button-card'
+              - color: green
+                entity: input_select.modalita_termostato
+                icon: 'mdi:leaf'
+                name: ECO
+                style: |
+                  ha-card {
+                    background: {% if is_state("input_select.modalita_termostato", "ECO") %}  yellow;
+                    {% endif %}
+                    color: {% if is_state("input_select.modalita_termostato", "ECO") %} red;
+                    {% endif %}
+                  }
+                styles:
+                  card:
+                    - height: 45px
+                    - width: 45px
+                    - left: 280px
+                    - top: '-25px'
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.modalita_termostato
+                    option: ECO
+                type: 'custom:button-card'
+              - color: orange
+                entity: input_select.modalita_termostato
+                icon: 'mdi:fire'
+                name: PRE
+                style: |
+                  ha-card {
+                    background: {% if is_state("input_select.modalita_termostato", "PRERISCALDAMENTO") %}  yellow;
+                    {% endif %}
+                    color: {% if is_state("input_select.modalita_termostato", "PRERISCALDAMENTO") %} red;
+                    {% endif %}
+                  }
+                styles:
+                  card:
+                    - height: 45px
+                    - width: 45px
+                    - left: 330px
+                    - top: '-25px'
+                tap_action:
+                  action: call-service
+                  service: script.turn_on
+                  service_data:
+                    entity_id: script.pre
+                type: 'custom:button-card'
+              - entity: input_number.temperatura_termostato
+                hold_action:
+                  action: call-service
+                  service: input_number.increment
+                  service_data:
+                    entity_id: input_number.temperatura_termostato
+                icon: 'mdi:arrow-up-bold-outline'
+                style:
+                  color: white
+                  left: 70%
+                  top: 40%
+                tap_action:
+                  action: call-service
+                  service: input_number.increment
+                  service_data:
+                    entity_id: input_number.temperatura_termostato
+                type: icon
+              - entity: input_number.temperatura_termostato
+                hold_action:
+                  action: call-service
+                  service: input_number.decrement
+                  service_data:
+                    entity_id: input_number.temperatura_termostato
+                icon: 'mdi:arrow-down-bold-outline'
+                style:
+                  color: white
+                  left: 70%
+                  top: 60%
+                tap_action:
+                  action: call-service
+                  service: input_number.decrement
+                  service_data:
+                    entity_id: input_number.temperatura_termostato
+                type: icon
+              - entity: sensor.riscaldamento_hvac_action
+                image: /local/immagini/lovelace/fiamma.gif
+                state_filter:
+                  heat: brigtness(100%)
+                  idle: brightness(50%) saturate(0.1)
+                  'off': brightness(50%) saturate(0.1)
+                style:
+                  left: 90%
+                  opacity: 50%
+                  top: 50%
+                type: image
+              - color: blue
+                entity: automation.mess
+                icon: 'mdi:message'
+                show_name: false
+                style: |
+                  ha-card {
+                    background: {% if is_state("automation.mess", "on") %}  yellow;
+                    {% endif %}
+                styles:
+                  card:
+                    - height: 45px
+                    - width: 45px
+                    - left: 30px
+                    - top: '-25px'
+                tap_action:
+                  action: call-service
+                  service: automation.toggle
+                  service_data:
+                    entity_id: automation.mess
+                type: 'custom:button-card'
+            image: /local/immagini/lovelace/blu.jpg
+            type: picture-elements
+        type: 'custom:state-switch'
+      - cards:
+          - color_type: card
+            entity: script.mattina
+            icon: 'mdi:numeric-1'
+            name: MATTINA
+            state:
+              - color: 'rgb(66,134,255)'
+                value: 'off'
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              service_data:
+                entity_id: script.mattina
+            type: 'custom:button-card'
+          - color_type: card
+            entity: script.pomeriggio
+            icon: 'mdi:numeric-2'
+            name: POM
+            state:
+              - color: 'rgb(255,128,1)'
+                value: 'off'
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              service_data:
+                entity_id: script.pomeriggio
+            type: 'custom:button-card'
+          - color_type: card
+            entity: script.notte
+            icon: 'mdi:numeric-3'
+            name: NOTTE
+            state:
+              - color: 'rgb(143,143,143)'
+                value: 'off'
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              service_data:
+                entity_id: script.notte
+            type: 'custom:button-card'
+        type: horizontal-stack
+      - default: TERMOSTATO
+        entity: input_select.visualizzazione
+        states:
+          ECO:
+            elements:
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Impostazioni eco
+                style:
+                  background-color: 'rgba(34, 154, 210, 0.5)'
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  right: 10%
+                  text-align: center
+                  top: 10%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-left-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: TERMOSTATO
+                type: icon
+              - entity: input_boolean.eco_orario
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 70%
+                  top: 25%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.eco_orario
+                type: state-label
+              - entity: input_select.modalita_trk
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 70%
+                  top: 40%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_next
+                  service_data:
+                    entity_id: input_select.modalita_trk
+                type: state-label
+              - entity: input_datetime.orario_accensione_eco_term
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 70%
+                  top: 55%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_eco_term
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 70%
+                  top: 70%
+                type: state-label
+              - entity: input_number.temperatura_eco
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 70%
+                  top: 85%
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Modalità ECO orario
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  text-align: left
+                  top: 25%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Modalità in uscita
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  text-align: left
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Orario accensione
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  text-align: left
+                  top: 55%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Orario spegnimento
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  pointer-events: auto
+                  text-align: left
+                  top: 70%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Temperatura
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  pointer-events: auto
+                  text-align: left
+                  top: 85%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_number.temperatura_eco
+                hold_action:
+                  action: call-service
+                  service: input_number.increment
+                  service_data:
+                    entity_id: input_number.temperatura_eco
+                icon: 'mdi:arrow-up-bold-outline'
+                style:
+                  color: white
+                  left: 60%
+                  top: 85%
+                tap_action:
+                  action: call-service
+                  service: input_number.increment
+                  service_data:
+                    entity_id: input_number.temperatura_eco
+                type: icon
+              - entity: input_number.temperatura_eco
+                hold_action:
+                  action: call-service
+                  service: input_number.decrement
+                  service_data:
+                    entity_id: input_number.temperatura_eco
+                icon: 'mdi:arrow-down-bold-outline'
+                style:
+                  color: white
+                  left: 80%
+                  top: 85%
+                tap_action:
+                  action: call-service
+                  service: input_number.decrement
+                  service_data:
+                    entity_id: input_number.temperatura_eco
+                type: icon
+            image: /local/immagini/lovelace/blu.jpg
+            type: picture-elements
+          LUN:
+            elements:
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Orario termostato lunedì
+                style:
+                  background-color: 'rgba(34, 154, 210, 0.5)'
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  opacity: 0.8
+                  pointer-events: auto
+                  right: 10%
+                  text-align: center
+                  top: 10%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-left-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: TERMOSTATO
+                type: icon
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-right-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 90%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: MAR
+                type: icon
+              - entity: input_datetime.orario_accensione_term_lun
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_lun
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 60%
+                type: state-label
+              - entity: input_datetime.orario_accensione_term_lun2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_lun2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 60%
+                type: state-label
+              - entity: input_datetime.orario_accensione_term_lun3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_lun3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 60%
+                type: state-label
+              - entity: input_boolean.accensione2_lun
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 30%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.accensione2_lun
+                type: state-label
+              - entity: input_boolean.accensione3_lun
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 30%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.accensione3_lun
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 1
+                style:
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 13%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 2
+                style:
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 43%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 3
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 72%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+            image: /local/immagini/lovelace/blu.jpg
+            type: picture-elements
+          MAR:
+            elements:
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Orario termostato martedì
+                style:
+                  background-color: 'rgba(34, 154, 210, 0.5)'
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  opacity: 0.8
+                  pointer-events: auto
+                  right: 10%
+                  text-align: center
+                  top: 10%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-left-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: TERMOSTATO
+                type: icon
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-right-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 90%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: MER
+                type: icon
+              - entity: input_datetime.orario_accensione_term_mar
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_mar
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 60%
+                type: state-label
+              - entity: input_datetime.orario_accensione_term_mar2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_mar2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 60%
+                type: state-label
+              - entity: input_datetime.orario_accensione_term_mar3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_mar3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 60%
+                type: state-label
+              - entity: input_boolean.accensione2_mar
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 30%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.accensione2_mar
+                type: state-label
+              - entity: input_boolean.accensione3_mar
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 30%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.accensione3_mar
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 1
+                style:
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 13%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 2
+                style:
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 43%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 3
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 72%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+            image: /local/immagini/lovelace/blu.jpg
+            type: picture-elements
+          MER:
+            elements:
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Orario termostato mercoledì
+                style:
+                  background-color: 'rgba(34, 154, 210, 0.5)'
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  opacity: 0.8
+                  pointer-events: auto
+                  right: 10%
+                  text-align: center
+                  top: 10%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-left-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: TERMOSTATO
+                type: icon
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-right-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 90%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: GIO
+                type: icon
+              - entity: input_datetime.orario_accensione_term_mer
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_mer
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 60%
+                type: state-label
+              - entity: input_datetime.orario_accensione_term_mer2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_mer2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 60%
+                type: state-label
+              - entity: input_datetime.orario_accensione_term_mer3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_mer3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 60%
+                type: state-label
+              - entity: input_boolean.accensione2_mer
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 30%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.accensione2_mer
+                type: state-label
+              - entity: input_boolean.accensione3_mer
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 30%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.accensione3_mer
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 1
+                style:
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 13%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 2
+                style:
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 43%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 3
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 72%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+            image: /local/immagini/lovelace/blu.jpg
+            type: picture-elements
+          GIO:
+            elements:
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Orario termostato giovedì
+                style:
+                  background-color: 'rgba(34, 154, 210, 0.5)'
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  opacity: 0.8
+                  pointer-events: auto
+                  right: 10%
+                  text-align: center
+                  top: 10%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-left-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: TERMOSTATO
+                type: icon
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-right-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 90%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: VEN
+                type: icon
+              - entity: input_datetime.orario_accensione_term_gio
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_gio
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 60%
+                type: state-label
+              - entity: input_datetime.orario_accensione_term_gio2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_gio2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 60%
+                type: state-label
+              - entity: input_datetime.orario_accensione_term_gio3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_gio3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 60%
+                type: state-label
+              - entity: input_boolean.accensione2_gio
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 30%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.accensione2_gio
+                type: state-label
+              - entity: input_boolean.accensione3_gio
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 30%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.accensione3_gio
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 1
+                style:
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 13%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 2
+                style:
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 43%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 3
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 72%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+            image: /local/immagini/lovelace/blu.jpg
+            type: picture-elements
+          VEN:
+            elements:
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Orario termostato venerdì
+                style:
+                  background-color: 'rgba(34, 154, 210, 0.5)'
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  opacity: 0.8
+                  pointer-events: auto
+                  right: 10%
+                  text-align: center
+                  top: 10%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-left-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: TERMOSTATO
+                type: icon
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-right-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 90%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: SAB
+                type: icon
+              - entity: input_datetime.orario_accensione_term_ven
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_ven
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 60%
+                type: state-label
+              - entity: input_datetime.orario_accensione_term_ven2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_ven2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 60%
+                type: state-label
+              - entity: input_datetime.orario_accensione_term_ven3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_ven3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 60%
+                type: state-label
+              - entity: input_boolean.accensione2_ven
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 30%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.accensione2_ven
+                type: state-label
+              - entity: input_boolean.accensione3_ven
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 30%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.accensione3_ven
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 1
+                style:
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 13%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 2
+                style:
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 43%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 3
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 72%
+                  opacity: 0.8
+                  pointer-events: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+            image: /local/immagini/lovelace/blu.jpg
+            type: picture-elements
+          SAB:
+            elements:
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Orario termostato sabato
+                style:
+                  background-color: 'rgba(34, 154, 210, 0.5)'
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  opacity: 0.8
+                  pointer-esabts: auto
+                  right: 10%
+                  text-align: center
+                  top: 10%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-left-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: TERMOSTATO
+                type: icon
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-right-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 90%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: DOM
+                type: icon
+              - entity: input_datetime.orario_accensione_term_sab
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_sab
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 60%
+                type: state-label
+              - entity: input_datetime.orario_accensione_term_sab2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_sab2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 60%
+                type: state-label
+              - entity: input_datetime.orario_accensione_term_sab3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_sab3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 60%
+                type: state-label
+              - entity: input_boolean.accensione2_sab
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 30%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.accensione2_sab
+                type: state-label
+              - entity: input_boolean.accensione3_sab
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 30%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.accensione3_sab
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 1
+                style:
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 13%
+                  opacity: 0.8
+                  pointer-esabts: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 2
+                style:
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 43%
+                  opacity: 0.8
+                  pointer-esabts: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 3
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 72%
+                  opacity: 0.8
+                  pointer-esabts: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+            image: /local/immagini/lovelace/blu.jpg
+            type: picture-elements
+          DOM:
+            elements:
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Orario termostato domenica
+                style:
+                  background-color: 'rgba(34, 154, 210, 0.5)'
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  opacity: 0.8
+                  pointer-edomts: auto
+                  right: 10%
+                  text-align: center
+                  top: 10%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-left-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: TERMOSTATO
+                type: icon
+              - entity: input_select.visualizzazione
+                icon: 'mdi:arrow-right-circle'
+                style:
+                  color: green
+                  left: 95%
+                  top: 90%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: LUN
+                type: icon
+              - entity: input_datetime.orario_accensione_term_dom
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_dom
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 60%
+                type: state-label
+              - entity: input_datetime.orario_accensione_term_dom2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_dom2
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 60%
+                type: state-label
+              - entity: input_datetime.orario_accensione_term_dom3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 50%
+                type: state-label
+              - entity: input_datetime.orario_spegnimento_term_dom3
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 60%
+                type: state-label
+              - entity: input_boolean.accensione2_dom
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 50%
+                  top: 30%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.accensione2_dom
+                type: state-label
+              - entity: input_boolean.accensione3_dom
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 80%
+                  top: 30%
+                tap_action:
+                  action: call-service
+                  service: input_boolean.toggle
+                  service_data:
+                    entity_id: input_boolean.accensione3_dom
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 1
+                style:
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 13%
+                  opacity: 0.8
+                  pointer-edomts: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 2
+                style:
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 43%
+                  opacity: 0.8
+                  pointer-edomts: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Fascia 3
+                style:
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 72%
+                  opacity: 0.8
+                  pointer-edomts: auto
+                  text-align: center
+                  top: 40%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+            image: /local/immagini/lovelace/blu.jpg
+            type: picture-elements
+          TERMOSTATO:
+            elements:
+              - entity: input_text.casella_vuota
+                hold_action:
+                  action: none
+                prefix: Termostato
+                style:
+                  background-color: 'rgba(34, 154, 210, 0.5)'
+                  border-radius: 6px
+                  color: white
+                  font-family: Trebuchet MS
+                  font-size: 120%
+                  font-weight: bold
+                  left: 10%
+                  opacity: 0.8
+                  pointer-events: auto
+                  right: 10%
+                  text-align: center
+                  top: 10%
+                  transform: 'translate(0%,-50%)'
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: input_select.visualizzazione
+                icon: 'mdi:calendar-today'
+                style:
+                  color: green
+                  left: 95%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: LUN
+                type: icon
+              - entity: input_select.visualizzazione
+                icon: 'mdi:leaf'
+                style:
+                  color: green
+                  left: 5%
+                  top: 10%
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.visualizzazione
+                    option: ECO
+                type: icon
+              - entity: input_number.temperatura_termostato
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 70%
+                  top: 50%
+                type: state-label
+              - entity: sensor.temperatura_attuale
+                style:
+                  color: white
+                  font-size: 150%
+                  left: 20%
+                  top: 50%
+                type: state-label
+              - color: grey
+                entity: input_select.modalita_termostato
+                icon: 'mdi:flash-off'
+                name: 'OFF'
+                style: |
+                  ha-card {
+                    background: {% if is_state("input_select.modalita_termostato", "OFF") %}  yellow;
+                    {% endif %}
+                    color: {% if is_state("input_select.modalita_termostato", "OFF") %} red;
+                    {% endif %}
+                  }
+                styles:
+                  card:
+                    - height: 45px
+                    - width: 45px
+                    - left: 230px
+                    - top: '-25px'
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.modalita_termostato
+                    option: 'OFF'
+                type: 'custom:button-card'
+              - color: red
+                entity: input_select.modalita_termostato
+                icon: 'mdi:fire'
+                name: MAN
+                style: |
+                  ha-card {
+                    background: {% if is_state("input_select.modalita_termostato", "MANUALE") %}  yellow;
+                    {% endif %}
+                    color: {% if is_state("input_select.modalita_termostato", "MANUALE") %} red;
+                    {% endif %}
+                  }
+                styles:
+                  card:
+                    - height: 45px
+                    - width: 45px
+                    - left: 180px
+                    - top: '-25px'
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.modalita_termostato
+                    option: MANUALE
+                type: 'custom:button-card'
+              - color: blue
+                entity: input_select.modalita_termostato
+                icon: 'mdi:home-automation'
+                name: AUTO
+                style: |
+                  ha-card {
+                    background: {% if is_state("input_select.modalita_termostato", "AUTO") %}  yellow;
+                    {% endif %}
+                    color: {% if is_state("input_select.modalita_termostato", "AUTO") %} red;
+                    {% endif %}
+                  }
+                styles:
+                  card:
+                    - height: 45px
+                    - width: 45px
+                    - left: 130px
+                    - top: '-25px'
+                tap_action:
+                  action: call-service
+                  service: script.turn_on
+                  service_data:
+                    entity_id: script.auto
+                type: 'custom:button-card'
+              - color: green
+                entity: input_select.modalita_termostato
+                icon: 'mdi:leaf'
+                name: ECO
+                style: |
+                  ha-card {
+                    background: {% if is_state("input_select.modalita_termostato", "ECO") %}  yellow;
+                    {% endif %}
+                    color: {% if is_state("input_select.modalita_termostato", "ECO") %} red;
+                    {% endif %}
+                  }
+                styles:
+                  card:
+                    - height: 45px
+                    - width: 45px
+                    - left: 280px
+                    - top: '-25px'
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.modalita_termostato
+                    option: ECO
+                type: 'custom:button-card'
+              - color: orange
+                entity: input_select.modalita_termostato
+                icon: 'mdi:fire'
+                name: PRE
+                style: |
+                  ha-card {
+                    background: {% if is_state("input_select.modalita_termostato", "PRERISCALDAMENTO") %}  yellow;
+                    {% endif %}
+                    color: {% if is_state("input_select.modalita_termostato", "PRERISCALDAMENTO") %} red;
+                    {% endif %}
+                  }
+                styles:
+                  card:
+                    - height: 45px
+                    - width: 45px
+                    - left: 330px
+                    - top: '-25px'
+                tap_action:
+                  action: call-service
+                  service: script.turn_on
+                  service_data:
+                    entity_id: script.pre
+                type: 'custom:button-card'
+              - entity: input_number.temperatura_termostato
+                hold_action:
+                  action: call-service
+                  service: input_number.increment
+                  service_data:
+                    entity_id: input_number.temperatura_termostato
+                icon: 'mdi:arrow-up-bold-outline'
+                style:
+                  color: white
+                  left: 70%
+                  top: 40%
+                tap_action:
+                  action: call-service
+                  service: input_number.increment
+                  service_data:
+                    entity_id: input_number.temperatura_termostato
+                type: icon
+              - entity: input_number.temperatura_termostato
+                hold_action:
+                  action: call-service
+                  service: input_number.decrement
+                  service_data:
+                    entity_id: input_number.temperatura_termostato
+                icon: 'mdi:arrow-down-bold-outline'
+                style:
+                  color: white
+                  left: 70%
+                  top: 60%
+                tap_action:
+                  action: call-service
+                  service: input_number.decrement
+                  service_data:
+                    entity_id: input_number.temperatura_termostato
+                type: icon
+              - entity: sensor.riscaldamento_hvac_action
+                image: /local/immagini/lovelace/fiamma.gif
+                state_filter:
+                  heat: brigtness(100%)
+                  idle: brightness(50%) saturate(0.1)
+                  'off': brightness(50%) saturate(0.1)
+                style:
+                  left: 90%
+                  opacity: 50%
+                  top: 50%
+                type: image
+              - color: blue
+                entity: automation.mess
+                icon: 'mdi:message'
+                show_name: false
+                style: |
+                  ha-card {
+                    background: {% if is_state("automation.mess", "on") %}  yellow;
+                    {% endif %}
+                styles:
+                  card:
+                    - height: 45px
+                    - width: 45px
+                    - left: 30px
+                    - top: '-25px'
+                tap_action:
+                  action: call-service
+                  service: automation.toggle
+                  service_data:
+                    entity_id: automation.mess
+                type: 'custom:button-card'
+            image: /local/immagini/lovelace/blu.jpg
+            type: picture-elements
+        type: 'custom:state-switch'
+    icon: 'mdi:radiator'
+    title: Termosifoni
