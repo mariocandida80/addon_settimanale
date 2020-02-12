@@ -1,0 +1,504 @@
+homeassistant:
+  customize:
+    package.node_anchors:
+      customize: &customize
+        Package:: Cronotermostato
+        Version:: 1.3
+        Author:: MARIO @tlod80
+        
+input_select:
+  visualizzazione:
+    options:
+      - "term_marOSTATO"
+      - "ORARIO"
+      - "ECO"
+      - "LUN"
+      - "MAR"
+      - "MER"
+      - "GIO"
+      - "VEN"
+      - "SAB"
+      - "DOM"
+
+input_datetime:
+  orario_accensione_term_lun:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_lun:
+    has_date: false
+    has_time: true
+  orario_accensione_term_lun2:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_lun2:
+    has_date: false
+    has_time: true
+  orario_accensione_term_lun3:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_lun3:
+    has_date: false
+    has_time: true  
+  orario_accensione_term_mar:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_mar:
+    has_date: false
+    has_time: true
+  orario_accensione_term_mar2:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_mar2:
+    has_date: false
+    has_time: true
+  orario_accensione_term_mar3:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_mar3:
+    has_date: false
+    has_time: true
+  orario_accensione_term_mer:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_mer:
+    has_date: false
+    has_time: true
+  orario_accensione_term_mer2:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_mer2:
+    has_date: false
+    has_time: true
+  orario_accensione_term_mer3:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_mer3:
+    has_date: false
+    has_time: true
+  orario_accensione_term_gio:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_gio:
+    has_date: false
+    has_time: true
+  orario_accensione_term_gio2:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_gio2:
+    has_date: false
+    has_time: true
+  orario_accensione_term_gio3:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_gio3:
+    has_date: false
+    has_time: true
+  orario_accensione_term_ven:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_ven:
+    has_date: false
+    has_time: true
+  orario_accensione_term_ven2:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_ven2:
+    has_date: false
+    has_time: true
+  orario_accensione_term_ven3:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_ven3:
+    has_date: false
+    has_time: true
+  orario_accensione_term_sab:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_sab:
+    has_date: false
+    has_time: true
+  orario_accensione_term_sab2:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_sab2:
+    has_date: false
+    has_time: true
+  orario_accensione_term_sab3:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_sab3:
+    has_date: false
+    has_time: true
+  orario_accensione_term_dom:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_dom:
+    has_date: false
+    has_time: true
+  orario_accensione_term_dom2:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_dom2:
+    has_date: false
+    has_time: true
+  orario_accensione_term_dom3:
+    has_date: false
+    has_time: true
+  orario_spegnimento_term_dom3:
+    has_date: false
+    has_time: true    
+
+input_boolean:
+  accensione2_lun:
+  accensione3_lun:
+  accensione2_mar:
+  accensione3_mar: 
+  accensione2_mer:
+  accensione3_mer: 
+  accensione2_gio:
+  accensione3_gio:
+  accensione2_ven:
+  accensione3_ven:
+  accensione2_sab:
+  accensione3_sab:
+  accensione2_dom:
+  accensione3_dom:                      
+
+automation:
+
+  - id: 'lun_term'
+    alias: termostato lunedi
+    trigger:
+    - platform: time
+      at: 00:00
+    condition:
+      condition: time
+      weekday:
+        - mon
+    action:
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term
+        time:  "{{ states('input_datetime.orario_accensione_term_lun') }}"  
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term
+        time:  "{{ states('input_datetime.orario_spegnimento_term_lun') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term2
+        time:  "{{ states('input_datetime.orario_accensione_term_lun2') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term2
+        time:  "{{ states('input_datetime.orario_spegnimento_term_lun2') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term3
+        time:  "{{ states('input_datetime.orario_accensione_term_lun3') }}"  
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term3
+        time:  "{{ states('input_datetime.orario_spegnimento_term_lun3') }}"
+    - service_template: >- 
+        {% if is_state('input_boolean.accensione2_lun', 'on') %}
+        input_boolean.turn_on
+        {% else %}
+        input_boolean.turn_off
+        {% endif %}
+      entity_id: input_boolean.accensione2
+    - service_template: >- 
+        {% if is_state('input_boolean.accensione3_lun', 'on') %}
+        input_boolean.turn_on
+        {% else %}
+        input_boolean.turn_off
+        {% endif %}
+      entity_id: input_boolean.accensione3    
+  - id: 'mar_term'
+    alias: termostato martedi
+    trigger:
+    - platform: time
+      at: 00:00
+    condition:
+      condition: time
+      weekday:
+      - tue
+    action:
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term
+        time:  "{{ states('input_datetime.orario_accensione_term_mar') }}"  
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term
+        time:  "{{ states('input_datetime.orario_spegnimento_term_mar') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term2
+        time:  "{{ states('input_datetime.orario_accensione_term_mar2') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term2
+        time:  "{{ states('input_datetime.orario_spegnimento_term_mar2') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term3
+        time:  "{{ states('input_datetime.orario_accensione_term_mar3') }}"  
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term3
+        time:  "{{ states('input_datetime.orario_spegnimento_term_mar3') }}"
+    - service_template: >- 
+        {% if is_state('input_boolean.accensione2_mar', 'on') %}
+        input_boolean.turn_on
+        {% else %}
+        input_boolean.turn_off
+        {% endif %}
+      entity_id: input_boolean.accensione2
+    - service_template: >- 
+        {% if is_state('input_boolean.accensione3_mar', 'on') %}
+        input_boolean.turn_on
+        {% else %}
+        input_boolean.turn_off
+        {% endif %}
+      entity_id: input_boolean.accensione3     
+  - id: 'mer_term'
+    alias: termostato mercoledi
+    trigger:
+    - platform: time
+      at: 00:01
+    condition:
+      condition: time
+      weekday:
+      - wed
+    action:
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term
+        time: "{{ states('input_datetime.orario_accensione_term_mer') }}"  
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term
+        time: "{{ states('input_datetime.orario_spegnimento_term_mer') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term2
+        time: "{{ states('input_datetime.orario_accensione_term_mer2') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term2
+        time: "{{ states('input_datetime.orario_spegnimento_term_mer2') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term3
+        time: "{{ states('input_datetime.orario_accensione_term_mer3') }}"  
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term3
+        time: "{{ states('input_datetime.orario_spegnimento_term_mer3') }}"
+    - service_template: >- 
+        {% if is_state('input_boolean.accensione2_mer', 'on') %}
+        input_boolean.turn_on
+        {% else %}
+        input_boolean.turn_off
+        {% endif %}
+      entity_id: input_boolean.accensione2
+    - service_template: >- 
+        {% if is_state('input_boolean.accensione3_mer', 'on') %}
+        input_boolean.turn_on
+        {% else %}
+        input_boolean.turn_off
+        {% endif %}
+      entity_id: input_boolean.accensione3    
+  - id: 'gio_term'
+    alias: termostato giovedi
+    trigger:
+    - platform: time
+      at: 00:01
+    condition:
+      condition: time
+      weekday:
+      - thu
+    action:
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term
+        time:  "{{ states('input_datetime.orario_accensione_term_gio') }}"  
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term
+        time:  "{{ states('input_datetime.orario_spegnimento_term_gio') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term2
+        time:  "{{ states('input_datetime.orario_accensione_term_gio2') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term2
+        time:  "{{ states('input_datetime.orario_spegnimento_term_gio2') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term3
+        time:  "{{ states('input_datetime.orario_accensione_term_gio3') }}"  
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term3
+        time:  "{{ states('input_datetime.orario_spegnimento_term_gio3') }}"
+    - service_template: >- 
+        {% if is_state('input_boolean.accensione2_gio', 'on') %}
+        input_boolean.turn_on
+        {% else %}
+        input_boolean.turn_off
+        {% endif %}
+      entity_id: input_boolean.accensione2
+    - service_template: >- 
+        {% if is_state('input_boolean.accensione3_gio', 'on') %}
+        input_boolean.turn_on
+        {% else %}
+        input_boolean.turn_off
+        {% endif %}
+      entity_id: input_boolean.accensione3      
+  - id: 'ven_term'
+    alias: termostato venerdi
+    trigger:
+    - platform: time
+      at: 00:01
+    condition:
+      condition: time
+      weekday:
+      - fri
+    action:
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term
+        time:  "{{ states('input_datetime.orario_accensione_term_ven') }}"  
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term
+        time:  "{{ states('input_datetime.orario_spegnimento_term_ven') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term2
+        time:  "{{ states('input_datetime.orario_accensione_term_ven2') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term2
+        time:  "{{ states('input_datetime.orario_spegnimento_term_ven2') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term3
+        time:  "{{ states('input_datetime.orario_accensione_term_ven3') }}"  
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term3
+        time:  "{{ states('input_datetime.orario_spegnimento_term_ven3') }}"
+    - service_template: >- 
+        {% if is_state('input_boolean.accensione2_ven', 'on') %}
+        input_boolean.turn_on
+        {% else %}
+        input_boolean.turn_off
+        {% endif %}
+      entity_id: input_boolean.accensione2
+    - service_template: >- 
+        {% if is_state('input_boolean.accensione3_ven', 'on') %}
+        input_boolean.turn_on
+        {% else %}
+        input_boolean.turn_off
+        {% endif %}
+      entity_id: input_boolean.accensione3       
+  - id: 'sab_term'
+    alias: termostato sabato
+    trigger:
+    - platform: time
+      at: 00:01
+    condition:
+      condition: time
+      weekday:
+      - sat
+    action:
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term
+        time:  "{{ states('input_datetime.orario_accensione_term_sab') }}"  
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term
+        time:  "{{ states('input_datetime.orario_spegnimento_term_sab') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term2
+        time:  "{{ states('input_datetime.orario_accensione_term_sab2') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term2
+        time:  "{{ states('input_datetime.orario_spegnimento_term_sab2') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term3
+        time:  "{{ states('input_datetime.orario_accensione_term_sab3') }}"  
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term3
+        time:  "{{ states('input_datetime.orario_spegnimento_term_sab3') }}"
+    - service_template: >- 
+        {% if is_state('input_boolean.accensione2_sab', 'on') %}
+        input_boolean.turn_on
+        {% else %}
+        input_boolean.turn_off
+        {% endif %}
+      entity_id: input_boolean.accensione2
+    - service_template: >- 
+        {% if is_state('input_boolean.accensione3_sab', 'on') %}
+        input_boolean.turn_on
+        {% else %}
+        input_boolean.turn_off
+        {% endif %}
+      entity_id: input_boolean.accensione3    
+  - id: 'dom_term'
+    alias: termostato domenica
+    trigger:
+    - platform: time
+      at: 00:01
+    condition:
+      condition: time
+      weekday:
+      - sun
+    action:
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term
+        time:  "{{ states('input_datetime.orario_accensione_term_dom') }}"  
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term
+        time:  "{{ states('input_datetime.orario_spegnimento_term_dom') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term2
+        time:  "{{ states('input_datetime.orario_accensione_term_dom2') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term2
+        time:  "{{ states('input_datetime.orario_spegnimento_term_dom2') }}" 
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_accensione_term3
+        time:  "{{ states('input_datetime.orario_accensione_term_dom3') }}"  
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.orario_spegnimento_term3
+        time:  "{{ states('input_datetime.orario_spegnimento_term_dom3') }}"
+    - service_template: >- 
+        {% if is_state('input_boolean.accensione2_dom', 'on') %}
+        input_boolean.turn_on
+        {% else %}
+        input_boolean.turn_off
+        {% endif %}
+      entity_id: input_boolean.accensione2
+    - service_template: >- 
+        {% if is_state('input_boolean.accensione3_dom', 'on') %}
+        input_boolean.turn_on
+        {% else %}
+        input_boolean.turn_off
+        {% endif %}
+      entity_id: input_boolean.accensione3    
