@@ -9,7 +9,7 @@ homeassistant:
 input_select:
   visualizzazione:
     options:
-      - "term_marOSTATO"
+      - "TERMOSTATO"
       - "ORARIO"
       - "ECO"
       - "LUN"
