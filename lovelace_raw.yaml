@@ -1,5 +1,5 @@
 default: TERMOSTATO
-entity: input_select.visualizzazione
+entity: input_select.visualizzazione2
 states:
   ECO:
     elements:
@@ -22,7 +22,7 @@ states:
         tap_action:
           action: none
         type: state-label
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:arrow-left-circle'
         style:
           color: green
@@ -32,7 +32,7 @@ states:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: TERMOSTATO
         type: icon
       - entity: input_boolean.eco_orario
@@ -221,7 +221,7 @@ states:
         tap_action:
           action: none
         type: state-label
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:arrow-left-circle'
         style:
           color: green
@@ -231,21 +231,34 @@ states:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: TERMOSTATO
         type: icon
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:arrow-right-circle'
         style:
-          color: green
-          left: 95%
-          top: 90%
+          color: grey
+          left: 85%
+          top: 10%
         tap_action:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: MAR
+        type: icon
+      - entity: input_select.visualizzazione2
+        icon: 'mdi:arrow-left-circle'
+        style:
+          color: grey
+          left: 15%
+          top: 10%
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          service_data:
+            entity_id: input_select.visualizzazione2
+            option: DOM
         type: icon
       - entity: input_datetime.orario_accensione_term_lun
         style:
@@ -394,7 +407,7 @@ states:
         tap_action:
           action: none
         type: state-label
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:arrow-left-circle'
         style:
           color: green
@@ -404,21 +417,34 @@ states:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: TERMOSTATO
         type: icon
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:arrow-right-circle'
         style:
-          color: green
-          left: 95%
-          top: 90%
+          color: grey
+          left: 85%
+          top: 10%
         tap_action:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: MER
+        type: icon
+      - entity: input_select.visualizzazione2
+        icon: 'mdi:arrow-left-circle'
+        style:
+          color: grey
+          left: 15%
+          top: 10%
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          service_data:
+            entity_id: input_select.visualizzazione2
+            option: LUN
         type: icon
       - entity: input_datetime.orario_accensione_term_mar
         style:
@@ -567,7 +593,7 @@ states:
         tap_action:
           action: none
         type: state-label
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:arrow-left-circle'
         style:
           color: green
@@ -577,21 +603,34 @@ states:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: TERMOSTATO
         type: icon
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:arrow-right-circle'
         style:
-          color: green
-          left: 95%
-          top: 90%
+          color: grey
+          left: 85%
+          top: 10%
         tap_action:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: GIO
+        type: icon
+      - entity: input_select.visualizzazione2
+        icon: 'mdi:arrow-left-circle'
+        style:
+          color: grey
+          left: 15%
+          top: 10%
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          service_data:
+            entity_id: input_select.visualizzazione2
+            option: MAR
         type: icon
       - entity: input_datetime.orario_accensione_term_mer
         style:
@@ -740,7 +779,7 @@ states:
         tap_action:
           action: none
         type: state-label
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:arrow-left-circle'
         style:
           color: green
@@ -750,21 +789,34 @@ states:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: TERMOSTATO
         type: icon
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:arrow-right-circle'
         style:
-          color: green
-          left: 95%
-          top: 90%
+          color: grey
+          left: 85%
+          top: 10%
         tap_action:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: VEN
+        type: icon
+      - entity: input_select.visualizzazione2
+        icon: 'mdi:arrow-left-circle'
+        style:
+          color: grey
+          left: 15%
+          top: 10%
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          service_data:
+            entity_id: input_select.visualizzazione2
+            option: MER
         type: icon
       - entity: input_datetime.orario_accensione_term_gio
         style:
@@ -913,7 +965,7 @@ states:
         tap_action:
           action: none
         type: state-label
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:arrow-left-circle'
         style:
           color: green
@@ -923,21 +975,34 @@ states:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: TERMOSTATO
         type: icon
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:arrow-right-circle'
         style:
-          color: green
-          left: 95%
-          top: 90%
+          color: grey
+          left: 85%
+          top: 10%
         tap_action:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: SAB
+        type: icon
+      - entity: input_select.visualizzazione2
+        icon: 'mdi:arrow-left-circle'
+        style:
+          color: grey
+          left: 15%
+          top: 10%
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          service_data:
+            entity_id: input_select.visualizzazione2
+            option: GIO
         type: icon
       - entity: input_datetime.orario_accensione_term_ven
         style:
@@ -1086,7 +1151,7 @@ states:
         tap_action:
           action: none
         type: state-label
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:arrow-left-circle'
         style:
           color: green
@@ -1096,21 +1161,34 @@ states:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: TERMOSTATO
         type: icon
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:arrow-right-circle'
         style:
-          color: green
-          left: 95%
-          top: 90%
+          color: grey
+          left: 85%
+          top: 10%
         tap_action:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: DOM
+        type: icon
+      - entity: input_select.visualizzazione2
+        icon: 'mdi:arrow-left-circle'
+        style:
+          color: grey
+          left: 15%
+          top: 10%
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          service_data:
+            entity_id: input_select.visualizzazione2
+            option: VEN
         type: icon
       - entity: input_datetime.orario_accensione_term_sab
         style:
@@ -1259,7 +1337,7 @@ states:
         tap_action:
           action: none
         type: state-label
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:arrow-left-circle'
         style:
           color: green
@@ -1269,21 +1347,34 @@ states:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: TERMOSTATO
         type: icon
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:arrow-right-circle'
         style:
-          color: green
-          left: 95%
-          top: 90%
+          color: grey
+          left: 85%
+          top: 10%
         tap_action:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: LUN
+        type: icon
+      - entity: input_select.visualizzazione2
+        icon: 'mdi:arrow-left-circle'
+        style:
+          color: grey
+          left: 15%
+          top: 10%
+        tap_action:
+          action: call-service
+          service: input_select.select_option
+          service_data:
+            entity_id: input_select.visualizzazione2
+            option: SAB
         type: icon
       - entity: input_datetime.orario_accensione_term_dom
         style:
@@ -1432,7 +1523,7 @@ states:
         tap_action:
           action: none
         type: state-label
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:calendar-today'
         style:
           color: green
@@ -1442,10 +1533,10 @@ states:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: LUN
         type: icon
-      - entity: input_select.visualizzazione
+      - entity: input_select.visualizzazione2
         icon: 'mdi:leaf'
         style:
           color: green
@@ -1455,7 +1546,7 @@ states:
           action: call-service
           service: input_select.select_option
           service_data:
-            entity_id: input_select.visualizzazione
+            entity_id: input_select.visualizzazione2
             option: ECO
         type: icon
       - entity: input_number.temperatura_termostato
@@ -1658,4 +1749,3 @@ states:
     image: /local/immagini/lovelace/blu.jpg
     type: picture-elements
 type: 'custom:state-switch'
-
