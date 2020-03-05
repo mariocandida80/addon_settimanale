@@ -1734,7 +1734,7 @@
                 show_name: false
                 style: |
                   ha-card {
-                    background: {% if is_state("automation.mess", "on") %}  yellow;
+                    background: {% if is_state("automation.mess_term", "on") %}  yellow;
                     {% endif %}
                 styles:
                   card:
