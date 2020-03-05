@@ -1729,7 +1729,7 @@
                   top: 50%
                 type: image
               - color: blue
-                entity: automation.mess
+                entity: automation.mess_term
                 icon: 'mdi:message'
                 show_name: false
                 style: |
