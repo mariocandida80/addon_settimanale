@@ -170,7 +170,19 @@ automation:
     alias: termostato lunedi
     trigger:
     - platform: time
-      at: 00:00
+      at: 00:01
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_lun
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_lun
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_lun2
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_lun2
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_lun3
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_lun3
     condition:
       condition: time
       weekday:
@@ -214,11 +226,24 @@ automation:
         input_boolean.turn_off
         {% endif %}
       entity_id: input_boolean.accensione3    
+
   - id: 'mar_term'
     alias: termostato martedi
     trigger:
     - platform: time
-      at: 00:00
+      at: 00:01
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_mar
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_mar
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_mar2
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_mar2
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_mar3
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_mar3
     condition:
       condition: time
       weekday:
@@ -262,11 +287,24 @@ automation:
         input_boolean.turn_off
         {% endif %}
       entity_id: input_boolean.accensione3     
+
   - id: 'mer_term'
     alias: termostato mercoledi
     trigger:
     - platform: time
       at: 00:01
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_mer
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_mer
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_mer2
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_mer2
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_mer3
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_mer3
     condition:
       condition: time
       weekday:
@@ -309,12 +347,25 @@ automation:
         {% else %}
         input_boolean.turn_off
         {% endif %}
-      entity_id: input_boolean.accensione3    
+      entity_id: input_boolean.accensione3   
+
   - id: 'gio_term'
     alias: termostato giovedi
     trigger:
     - platform: time
       at: 00:01
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_gio
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_gio
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_gio2
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_gio2
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_gio3
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_gio3
     condition:
       condition: time
       weekday:
@@ -358,11 +409,24 @@ automation:
         input_boolean.turn_off
         {% endif %}
       entity_id: input_boolean.accensione3      
+
   - id: 'ven_term'
     alias: termostato venerdi
     trigger:
     - platform: time
       at: 00:01
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_ven
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_ven
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_ven2
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_ven2
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_ven3
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_ven3
     condition:
       condition: time
       weekday:
@@ -405,12 +469,25 @@ automation:
         {% else %}
         input_boolean.turn_off
         {% endif %}
-      entity_id: input_boolean.accensione3       
+      entity_id: input_boolean.accensione3    
+
   - id: 'sab_term'
     alias: termostato sabato
     trigger:
     - platform: time
       at: 00:01
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_sab
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_sab
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_sab2
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_sab2
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_sab3
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_sab3
     condition:
       condition: time
       weekday:
@@ -454,11 +531,24 @@ automation:
         input_boolean.turn_off
         {% endif %}
       entity_id: input_boolean.accensione3    
+
   - id: 'dom_term'
     alias: termostato domenica
     trigger:
     - platform: time
       at: 00:01
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_dom
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_dom
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_dom2
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_dom2
+    - platform: state
+      entity_id: input_datetime.orario_accensione_term_dom3
+    - platform: state
+      entity_id: input_datetime.orario_spegnimento_term_dom3
     condition:
       condition: time
       weekday:
