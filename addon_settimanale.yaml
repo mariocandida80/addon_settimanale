@@ -7,7 +7,7 @@ homeassistant:
         Author:: MARIO @tlod80
         
 input_select:
-  visualizzazione:
+  visualizzazione2:
     options:
       - "TERMOSTATO"
       - "ORARIO"
