@@ -13,6 +13,7 @@ Per chi usa la modalità yaml, aprire il file lovelace_yaml.yaml e copiare il co
 <p align="center"/> <b>Funzionamento</b><br> </p>
 Il funzionamento è lo stesso del package cronotermostato ma con la differenza che è possibile programmare 3 fasce 
 orarie per ogni giorno della settimana.<br>
+Cliccando sull'icona calendario in alto a destra, si aprirà il menù per l'impostazione delle fasce orarie per il lunedì; ci sono 2 frecce grigie per spostarsi tra i giorni. Cliccando sulla freccia verde in alto a destra si potrà tornare alla pagina principale.<br>
 
 
 Per qualsiasi problema scrivete sul <a href="https://forum.hassiohelp.eu/showthread.php?tid=503">forum.</a><br>
