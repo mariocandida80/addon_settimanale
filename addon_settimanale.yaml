@@ -3,7 +3,7 @@ homeassistant:
     package.node_anchors:
       customize: &customize
         Package:: Cronotermostato
-        Version:: 1.3
+        Version:: 1.4
         Author:: MARIO @tlod80
         
 input_select:
@@ -12,6 +12,7 @@ input_select:
       - "TERMOSTATO"
       - "ORARIO"
       - "ECO"
+      - "IMPOSTAZIONI"
       - "LUN"
       - "MAR"
       - "MER"
