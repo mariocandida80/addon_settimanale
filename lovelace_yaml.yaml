@@ -1401,7 +1401,7 @@
                 tap_action:
                   action: none
                 type: state-label
-              - entity: input_select.visualizzazione2
+              - entity: input_boolean.selezione_giorno_term
                 icon: 'mdi:calendar-today'
                 style:
                   color: green
@@ -1409,10 +1409,9 @@
                   top: 10%
                 tap_action:
                   action: call-service
-                  service: input_select.select_option
+                  service: input_boolean.toggle
                   service_data:
-                    entity_id: input_select.visualizzazione2
-                    option: LUN
+                    entity_id: input_boolean.selezione_giorno_term
                 type: icon
               - entity: input_select.visualizzazione2
                 icon: 'mdi:cogs'
