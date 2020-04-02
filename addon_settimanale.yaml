@@ -3,7 +3,7 @@ homeassistant:
     package.node_anchors:
       customize: &customize
         Package:: Cronotermostato
-        Version:: 1.4
+        Version:: 1.5
         Author:: MARIO @tlod80
         
 input_select:
@@ -163,7 +163,8 @@ input_boolean:
   accensione2_sab:
   accensione3_sab:
   accensione2_dom:
-  accensione3_dom:                      
+  accensione3_dom:  
+  selezione_giorno_term:
 
 automation:
 
@@ -593,3 +594,101 @@ automation:
         input_boolean.turn_off
         {% endif %}
       entity_id: input_boolean.accensione3    
+
+  - alias: contr lun term
+    trigger:
+    - platform: state
+      entity_id: input_boolean.selezione_giorno_term
+    condition:
+      condition: time
+      weekday:
+      - mon
+    action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.visualizzazione2
+        option: LUN
+
+  - alias: contr mar term
+    trigger:
+    - platform: state
+      entity_id: input_boolean.selezione_giorno_term
+    condition:
+      condition: time
+      weekday:
+      - tue
+    action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.visualizzazione2
+        option: MAR
+
+  - alias: contr mer term
+    trigger:
+    - platform: state
+      entity_id: input_boolean.selezione_giorno_term
+    condition:
+      condition: time
+      weekday:
+      - wed
+    action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.visualizzazione2
+        option: MER
+
+  - alias: contr gio term
+    trigger:
+    - platform: state
+      entity_id: input_boolean.selezione_giorno_term
+    condition:
+      condition: time
+      weekday:
+      - thu
+    action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.visualizzazione2
+        option: GIO
+
+  - alias: contr ven term
+    trigger:
+    - platform: state
+      entity_id: input_boolean.selezione_giorno_term
+    condition:
+      condition: time
+      weekday:
+      - fri
+    action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.visualizzazione2
+        option: VEN
+
+  - alias: contr sab term
+    trigger:
+    - platform: state
+      entity_id: input_boolean.selezione_giorno_term
+    condition:
+      condition: time
+      weekday:
+      - sat
+    action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.visualizzazione2
+        option: SAB
+
+  - alias: contr dom term
+    trigger:
+    - platform: state
+      entity_id: input_boolean.selezione_giorno_term
+    condition:
+      condition: time
+      weekday:
+      - sun
+    action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.visualizzazione2
+        option: DOM
