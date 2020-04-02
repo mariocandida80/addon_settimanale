@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/Versione-0.1-brightgreen">  <a href="https://forum.hassiohelp.eu/showthread.php?tid=503"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"> </a>
+<img src="https://img.shields.io/badge/Versione-1.5-brightgreen">  <a href="https://forum.hassiohelp.eu/showthread.php?tid=503"><img src="https://img.shields.io/badge/Forum-hassiohelp-blue"> <img src="https://img.shields.io/badge/Aggiornato-si-orange"></a> <a href="https://www.buymeacoffee.com/mariocandida80"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="90" alt="Buy Me A Coffee"> </a>
 <br> 
 <p align="center"/> <b>Addon settimanale per package Cronotermostato.</b> <br> </p>
 Questo addon va ad integrarsi al <a href="https://github.com/mariocandida80/cronotermostato">package cronotermostato </a>aggiungendo la possibilità di una programmazione settimanale. <br>
